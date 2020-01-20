@@ -1,0 +1,22 @@
+<% include ../partials/header %>
+<div>
+	<div>
+		<h1>Add new comments to <%= event.name %> </h1>
+		<div>
+			<form action="/wall/<%= event._id %>/comments" method="POST">
+				<div>
+					<input type="text" name="comment[text]" placeholder="comment">
+				</div>
+				<div>
+					<input type="text" name="comment[author]" placeholder="author">
+				</div>
+				<div>
+					<button>Submit</button>
+				</div>
+			</form>		
+			<a href="/wall">Go Back</a>
+		</div>
+
+	</div>
+
+<% include ../partials/footer %>

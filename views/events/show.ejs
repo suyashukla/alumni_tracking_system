@@ -1,0 +1,18 @@
+<% include ../partials/header %>
+<h1><%= event.name %></h1>
+
+<%= event.date %>
+
+<p><%= event.description %></p>
+
+<p>
+    <a href="/wall/<%= event._id %>/comments/new">Add a comment</a>
+</p>
+
+<% event.comments.forEach(function(comment){ %>
+    <p>
+        <% console.log(comment.author) %>
+        <strong><%= comment.author %></strong>-<%= comment.text %>
+    </p>
+<% }) %>
+<% include ../partials/footer %>

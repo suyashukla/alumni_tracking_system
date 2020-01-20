@@ -1,0 +1,26 @@
+<% include partials/header %>
+<div>
+	<header>
+		<div>
+			<h1>Welcome</h1>
+			<p>Upcoming events</p>
+			<p>
+				<a href="/wall/new">Add new event</a>
+			</p>
+		</div>
+	</header>
+	<div>
+		<% events.forEach(function(event){%>
+			<div>
+				<div>
+					<p><%= event.date %></p>
+				</div>
+				<div>
+					<h4><a href="/wall/<%= event._id%>"><%= event.name%></a></h4>
+				</div>
+			</div>
+		<% }); %>
+	</div>
+</div>
+
+<% include partials/footer %>
